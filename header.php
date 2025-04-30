@@ -46,7 +46,7 @@
          </div>
          <div class="tpoffcanvas__logo">
             <a href="index.html">
-               <img src="assets/img/logo/black-logo.png" alt="">
+               <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/black-logo.png" alt="">
             </a>
          </div>
          <div class="tp-main-menu-mobile"></div>
@@ -76,7 +76,7 @@
                   <div class="search__top d-flex justify-content-between align-items-center">
                      <div class="search__logo">
                         <a href="index.html">
-                           <img src="assets/img/logo/footer-logo.png" alt="logo">
+                           <img src="<?php echo get_template_directory_uri();?>/assets/img/logo/footer-logo.png" alt="logo">
                         </a>
                      </div>
                      <div class="search__close">
@@ -126,7 +126,7 @@
                   <div class="row align-items-center">
                      <div class="col-xl-4">
                         <div class="main-logo ">
-                           <a href="index.html"><img src="assets/img/logo/black-logo.png" alt=""></a>
+                           <a href="index.html"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo/black-logo.png" alt=""></a>
                         </div>
                      </div>
                      <div class="col-xl-8">
@@ -179,7 +179,7 @@
                                        <div class="row gx-6 row-cols-1 row-cols-md-2 row-cols-xl-3">
                                           <div class="col homemenu">
                                              <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/home-1.jpg" alt="">
+                                                <img src="<?php echo get_template_directory_uri();?>/assets/img/menu/home-1.jpg" alt="">
                                                 <div class="homemenu-btn">
                                                    <a class="tp-menu-btn" href="index.html">View Demo</a>
                                                 </div>
@@ -192,7 +192,7 @@
                                           </div>
                                           <div class="col homemenu">
                                              <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/home-2.jpg" alt="">
+                                                <img src="<?php echo get_template_directory_uri();?>/assets/img/menu/home-2.jpg" alt="">
                                                 <div class="homemenu-btn">
                                                    <a class="tp-menu-btn" href="index-2.html">View Demo</a>
                                                 </div>
@@ -205,7 +205,7 @@
                                           </div>
                                           <div class="col homemenu">
                                              <div class="homemenu-thumb mb-15">
-                                                <img src="assets/img/menu/home-3.jpg" alt="">
+                                                <img src="<?php echo get_template_directory_uri();?>/assets/img/menu/home-3.jpg" alt="">
                                                 <div class="homemenu-btn">
                                                    <a class="tp-menu-btn" href="index-3.html">View Demo</a>
                                                 </div>
@@ -277,7 +277,7 @@
             <div class="row align-items-center">
                <div class="col-6">
                   <div class="main-logo ">
-                     <a href="index.html"><img src="assets/img/logo/black-logo.png" alt=""></a>
+                     <a href="index.html"><img src="<?php echo get_template_directory_uri();?>/assets/img/logo/black-logo.png" alt=""></a>
                   </div>
                </div>
                <div class="col-6">
@@ -293,3 +293,26 @@
       </div>
    </header>
    <!-- header area end -->
+       <!--  breadcrumb-area  start -->
+   <div class="wrapper-box p-relative ">
+      <div class="breadcrumb__bg breadcrumb__bg__overlay pt-130 pb-130 "
+         data-background="<?php echo get_template_directory_uri();?>/assets/img/breadcrumb/breadcrumb-bg-1.jpg">
+         <div class="container">
+            <div class="row">
+               <div class="col-xxl-12">
+                  <div class="breadcrumb__content p-relative z-index-1 ">
+                     <div class="breadcrumb__list mb-10">
+                        <h3 class="breadcrumb__title mb-15">Blogs</h3>
+                        <div class="breadcrumb__item">
+                           <span><a href="index.html">Home </a></span>
+                           <span class="dvdr"> / </span>
+                           <span class="sub-page-black">Blogs</span>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!--  breadcrumb-area  end -->

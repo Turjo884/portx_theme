@@ -60,11 +60,6 @@ function portx_setup() {
 		'image', 'video', 'quote', 'link', 'gallery', 'audio'
 	) );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	// add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', portx_fonts_url() ) );
 }
 endif; // portx_setup
 add_action( 'after_setup_theme', 'portx_setup' );
