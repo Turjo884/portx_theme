@@ -1,3 +1,4 @@
+<?php
 if ( ! function_exists( 'portx_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -35,7 +36,7 @@ function portx_setup() {
 	 * See: https://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
 	add_theme_support( 'post-thumbnails' );
-	<!-- set_post_thumbnail_size( 825, 510, true ); -->
+	// set_post_thumbnail_size( 825, 510, true );
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
@@ -63,15 +64,15 @@ function portx_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', portx_fonts_url() ) );
+	// add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', portx_fonts_url() ) );
 }
 endif; // portx_setup
 add_action( 'after_setup_theme', 'portx_setup' );
 
 
-<!-- portx css and js configuration -->
+// portx css and js configuration
 function portx_scripts() {
-	<!-- CSS Configuration -->
+	// CSS Configuration
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(), '1.0.0', 'all' );
 
 	wp_enqueue_style( 'bootstrap-rtl', get_template_directory_uri() . '/assets/css/bootstrap-rtl.css', array(), '5.0.2', 'all' );
@@ -98,12 +99,10 @@ function portx_scripts() {
 	
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
-	<!-- JS Configuration -->
+	// JS Configuration
 	wp_enqueue_script( 'bootstrap-bundle', get_template_directory_uri() . '/assets/js/bootstrap-bundle.js', array( 'jquery' ), '5.1.3', true );
 
 	wp_enqueue_script( 'counterup', get_template_directory_uri() . '/assets/js/counterup.js', array( 'jquery' ), '1.0', true );
-
-	wp_enqueue_script( 'imagesloaded-pkgd', get_template_directory_uri() . '/assets/js/imagesloaded-pkgd.js', array( 'jquery' ), '4.1.4', true );
 
 	wp_enqueue_script( 'isotope-pkgd', get_template_directory_uri() . '/assets/js/isotope-pkgd.js', array( 'jquery' ), '4.1.4', true );
 
@@ -128,3 +127,5 @@ function portx_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'portx_scripts' );
+
+?>

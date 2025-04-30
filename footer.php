@@ -129,3 +129,5 @@
       </div>
    </footer>
    <!-- footer area end -->
+
+   <?php wp_footer(); ?>
