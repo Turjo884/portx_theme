@@ -131,3 +131,5 @@
    <!-- footer area end -->
 
    <?php wp_footer(); ?>
+</body>
+</html>

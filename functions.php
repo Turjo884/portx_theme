@@ -123,4 +123,5 @@ function portx_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'portx_scripts' );
 
-?>
+include_once('inc/template-function.php');
+include_once('inc/portx-kirki.php');
