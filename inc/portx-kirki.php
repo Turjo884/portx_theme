@@ -104,12 +104,12 @@ function header_info_kirki(){
 header_info_kirki();
 
 
-// footer social panel sectoin
-function footer_social_kirki(){
+// Header offcanvas social panel sectoin
+function header_social_kirki(){
     new \Kirki\Section(
         'header_social_info',
         [
-            'title'       => esc_html__( 'Footer Social Info', 'kirki' ),
+            'title'       => esc_html__( 'Header Offcanvas Social Info', 'kirki' ),
             'description' => esc_html__( 'Portx Section Description.', 'kirki' ),
             'panel'       => 'portx_panel_id',
             'priority'    => 160,
@@ -125,11 +125,11 @@ function footer_social_kirki(){
             'priority' => 10,
         ]
     );
-    
+
     new \Kirki\Field\Text(
         [
-            'settings' => 'social_ig',
-            'label'    => esc_html__( 'Instagram', 'kirki' ),
+            'settings' => 'social_tw',
+            'label'    => esc_html__( 'Twitter', 'kirki' ),
             'section'  => 'header_social_info',
             'default'  => esc_html__( '#', 'kirki' ),
             'priority' => 10,
@@ -148,12 +148,67 @@ function footer_social_kirki(){
 
     new \Kirki\Field\Text(
         [
-            'settings' => 'social_tw',
-            'label'    => esc_html__( 'Twitter', 'kirki' ),
+            'settings' => 'social_ig',
+            'label'    => esc_html__( 'Instagram', 'kirki' ),
             'section'  => 'header_social_info',
             'default'  => esc_html__( '#', 'kirki' ),
             'priority' => 10,
         ]
     );
+
 }
-footer_social_kirki();
+header_social_kirki();
+
+// header info panel sectoin
+function header_offcanvas_info_kirki(){
+    new \Kirki\Section(
+        'header_offcanvas_info',
+        [
+            'title'       => esc_html__( 'Header Offcanvas Info', 'kirki' ),
+            'description' => esc_html__( 'Portx Section Description.', 'kirki' ),
+            'panel'       => 'portx_panel_id',
+            'priority'    => 160,
+        ]
+    );
+
+    new \Kirki\Field\Image(
+        [
+            'settings'    => 'header_offcanvas_logo',
+            'label'       => esc_html__( 'Header Offcanvas Logo', 'kirki' ),
+            'description' => esc_html__( 'Upload Your Logo', 'kirki' ),
+            'section'     => 'header_offcanvas_info',
+            'default'     => get_template_directory_uri().'/assets/img/logo/black-logo.png',
+        ]
+    );
+    
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'getting_started',
+            'label'    => esc_html__( 'Provide Your Link', 'kirki' ),
+            'section'  => 'header_offcanvas_info',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'offcanvas_email_address',
+            'label'    => esc_html__( 'Your Email', 'kirki' ),
+            'section'  => 'header_offcanvas_info',
+            'default'  => esc_html__( 'portxinfo@gmail.com', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+    
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'offcanvas_phone_number',
+            'label'    => esc_html__( 'Your Phone Number', 'kirki' ),
+            'section'  => 'header_offcanvas_info',
+            'default'  => esc_html__( '(00) 122 456 789', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+}
+header_offcanvas_info_kirki();

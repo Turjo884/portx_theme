@@ -4,12 +4,6 @@
     $email_address = get_theme_mod('email_address' , esc_html__('portxinfo@gmail.com' , 'portx'));
     $phone_number = get_theme_mod('phone_number' , esc_html__('(00) 122 456 789' , 'portx'));
 
-    // footer 
-    $social_fb = get_theme_mod('social_fb' , esc_html__('#' , 'portx'));
-    $social_ig = get_theme_mod('social_ig' , esc_html__('#' , 'portx'));
-    $social_in = get_theme_mod('social_in' , esc_html__('#' , 'portx'));
-    $social_tw = get_theme_mod('social_tw' , esc_html__('#' , 'portx'));
-
 ?>
    
    <!-- header area start -->
