@@ -40,7 +40,7 @@ function portx_setup() {
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'portx' ),
+		'main-menu' => __( 'Main Menu', 'portx' ),
 	) );
 
 	/*
@@ -123,5 +123,6 @@ function portx_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'portx_scripts' );
 
+include_once('inc/nav-walker.php');
 include_once('inc/template-function.php');
 include_once('inc/portx-kirki.php');

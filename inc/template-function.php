@@ -1,5 +1,17 @@
 <?php
 
+// portx menu
+function portx_main_menu(){
+    wp_nav_menu(array(
+        'theme_location' => 'main-menu',
+        'container' => '',
+        'menu_class' => 'nav-menu',
+        'fallback_cb' => 'Portx_Walker_Nav_Menu::fallback',
+        'walker' => new Portx_Walker_Nav_Menu,
+      ));
+}
+
+// portx header logo
 function portx_header_logo(){
 
     $header_logo = get_theme_mod('header_logo', get_template_directory_uri() . '/assets/img/logo/black-logo.png');
@@ -9,6 +21,7 @@ function portx_header_logo(){
     <?php
 }
 
+// portx search header logo
 function portx_search_header_logo(){
 
     $header_search_logo = get_theme_mod('header_search_logo', get_template_directory_uri() . '/assets/img/logo/footer-logo.png');
@@ -18,6 +31,7 @@ function portx_search_header_logo(){
     <?php
 }
 
+// portx offcanvas logo
 function portx_offcanvas_logo(){
 
     $header_offcanvas_logo = get_theme_mod('header_offcanvas_logo', get_template_directory_uri() . '/assets/img/logo/black-logo.png');
