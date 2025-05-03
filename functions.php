@@ -60,9 +60,55 @@ function portx_setup() {
 		'image', 'video', 'quote', 'link', 'gallery', 'audio'
 	) );
 
+	remove_theme_support('widgets-block-editor');
+
 }
 endif; // portx_setup
 add_action( 'after_setup_theme', 'portx_setup' );
+
+/** register widget **/
+function portx_register_widget_sidebar() {
+	register_sidebar( array(
+		'name'          => __( 'Footer 1', 'textdomain' ),
+		'id'            => 'footer-1',
+		'description'   => __( 'Widgets in this area will be shown on footer-1 widget.', 'textdomain' ),
+		'before_widget' => '<div id="%1$s" class="tp-footer__widget  tp-footer-col-1 mb-40  wow fadeInUp %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="tp-footer__widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 2', 'textdomain' ),
+		'id'            => 'footer-2',
+		'description'   => __( 'Widgets in this area will be shown on footer-2 widget.', 'textdomain' ),
+		'before_widget' => '<div id="%1$s" class="tp-footer__widget tp-footer-col-2  mb-40 fix wow fadeInUp %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="tp-footer__widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 3', 'textdomain' ),
+		'id'            => 'footer-3',
+		'description'   => __( 'Widgets in this area will be shown on footer-3 widget.', 'textdomain' ),
+		'before_widget' => '<div id="%1$s" class="tp-footer__widget tp-footer-col-3  mb-40  wow fadeInUp   %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="tp-footer__widget-title">',
+		'after_title'   => '</h4>',
+	) );
+
+	register_sidebar( array(
+		'name'          => __( 'Footer 4', 'textdomain' ),
+		'id'            => 'footer-4',
+		'description'   => __( 'Widgets in this area will be shown on footer-3 widget.', 'textdomain' ),
+		'before_widget' => '<div id="%1$s" class="tp-footer__widget tp-footer-col-4 wow fadeInUp %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h4 class="tp-footer__widget-title">',
+		'after_title'   => '</h4>',
+	) );
+}
+add_action( 'widgets_init', 'portx_register_widget_sidebar' );
 
 
 // portx css and js configuration
