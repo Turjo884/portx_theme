@@ -31,6 +31,16 @@ function header_logo_kirki(){
             'default'     => get_template_directory_uri().'/assets/img/logo/black-logo.png',
         ]
     );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'request_a_quote',
+            'label'    => esc_html__( 'Request A Quote Link', 'kirki' ),
+            'section'  => 'header_logo_section',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
 }
 header_logo_kirki();
 

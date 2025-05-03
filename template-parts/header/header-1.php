@@ -4,6 +4,8 @@
     $email_address = get_theme_mod('email_address' , esc_html__('portxinfo@gmail.com' , 'portx'));
     $phone_number = get_theme_mod('phone_number' , esc_html__('(00) 122 456 789' , 'portx'));
 
+    $request_a_quote = get_theme_mod('request_a_quote' , esc_html__('#' , 'portx'));
+
 ?>
    
    <!-- header area start -->
@@ -83,9 +85,13 @@
                                  <i class="flaticon-loupe"></i>
                               </button>
                            </div>
+
+                           <?php if(!empty($request_a_quote)) : ?>
                            <div class="tp-header__btn">
-                              <a class="tp-btn" href="contact.html">REQUEST A QUOTE</a>
+                              <a class="tp-btn" href="<?php echo esc_url($request_a_quote); ?>"><?php echo esc_html__('REQUEST A QUOTE','portx');?></a>
                            </div>
+                           <?php endif; ?>
+
                         </div>
                      </div>
                   </div>
