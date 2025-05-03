@@ -21,9 +21,9 @@
                      </div>
                   </div>
                   <div class="search__form">
-                     <form action="#">
+                     <form action="/" method="get">
                         <div class="search__input">
-                           <input class="search-input-field" type="text" placeholder="Type here to search...">
+                           <input name="s" class="search-input-field" type="text" placeholder="<?php echo esc_attr__('Type here to search...', 'portx'); ?>" value="<?php the_search_query(); ?>">
                            <span class="search-focus-border"></span>
                            <button type="submit">
                               <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
