@@ -11,6 +11,17 @@ function portx_main_menu(){
       ));
 }
 
+// portx footer menu
+function portx_footer_menu(){
+    wp_nav_menu(array(
+        'theme_location' => 'footer-menu',
+        'container' => '',
+        'menu_class' => 'nav-menu',
+        'fallback_cb' => 'Portx_Walker_Nav_Menu::fallback',
+        'walker' => new Portx_Walker_Nav_Menu,
+      ));
+}
+
 // portx header logo
 function portx_header_logo(){
 

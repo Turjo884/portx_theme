@@ -222,3 +222,54 @@ function header_offcanvas_info_kirki(){
     );
 }
 header_offcanvas_info_kirki();
+
+// footer copywright sectoin
+function footer_copywright_kirki(){
+    new \Kirki\Section(
+        'footer_copywright_section',
+        [
+            'title'       => esc_html__( 'Footer Copywirht Url', 'kirki' ),
+            'description' => esc_html__( 'Portx Section Description.', 'kirki' ),
+            'panel'       => 'portx_panel_id',
+            'priority'    => 160,
+        ]
+    );
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'copywright_text',
+            'label'    => esc_html__( 'Write Your Copywrith Text', 'kirki' ),
+            'section'  => 'footer_copywright_section',
+            'default'  => esc_html__( 'Copyright © 2025 Portx by Portx. All Rights Reserved', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Checkbox_Switch(
+        [
+            'settings'    => 'footer_banner_shape_switch',
+            'label'       => esc_html__( 'Footer Banner Switch', 'kirki' ),
+            'description' => esc_html__( 'Switch The Banner Shape', 'kirki' ),
+            'section'     => 'footer_copywright_section',
+            'default'     => 'on',
+            'choices'     => [
+                'on'  => esc_html__( 'Enable', 'kirki' ),
+                'off' => esc_html__( 'Disable', 'kirki' ),
+            ],
+        ]
+    );
+
+    new \Kirki\Field\Checkbox_Switch(
+        [
+            'settings'    => 'footer_car_shape_switch',
+            'label'       => esc_html__( 'Footer Switch', 'kirki' ),
+            'description' => esc_html__( 'Switch The Shape', 'kirki' ),
+            'section'     => 'footer_copywright_section',
+            'default'     => 'on',
+            'choices'     => [
+                'on'  => esc_html__( 'Enable', 'kirki' ),
+                'off' => esc_html__( 'Disable', 'kirki' ),
+            ],
+        ]
+    );
+}
+footer_copywright_kirki();

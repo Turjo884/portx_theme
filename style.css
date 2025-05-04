@@ -17,3 +17,10 @@ Tags: one-column, custom-colors, custom-menu, custom-logo, editor-style, feature
 #menu-footer-menu{
     color: #fff!important;
 }
+div#gallery-1 {
+    display: flex!important;
+    justify-content: space-around;
+}
+.tp-footer__input button {
+    top: 29%!important;
+}
