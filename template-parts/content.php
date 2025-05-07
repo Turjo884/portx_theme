@@ -1,4 +1,4 @@
-<div class="tpblog-2 wow fadeInUp   mb-30" data-wow-duration=".9s" data-wow-delay=".3s"
+               <div id ="post-<?php the_ID(); ?>" <?php post_class("tpblog-2 wow fadeInUp   mb-30"); ?> data-wow-duration=".9s" data-wow-delay=".3s"
                   style="visibility: visible; animation-duration: 1.5s; animation-delay: 100ms; animation-name: fadeInUp;">
                   <div class="tpblog-2__content">
 
@@ -16,7 +16,7 @@
                      <div class="tpblog-2__button blog-border d-flex align-items-center fix">
                         <span class="f-left tpblog-2__more-btn">
                            <a href="<?php the_permalink(); ?>" tabindex="0">
-                              <span class="tpblog-2__blog-more">READ MORE</span>
+                              <span class="tpblog-2__blog-more"><?php echo esc_html__('READ MORE', 'portx'); ?></span>
                               <i class="fa-regular fa-arrow-right"></i>
                            </a>
                         </span>
