@@ -52,4 +52,20 @@ function portx_offcanvas_logo(){
     <?php
 }
 
+// portx_pagination
+function portx_pagination(){
+    $pages = paginate_links( array( 
+        'type' => 'array',
+        'prev_text'    => __('<i class="fa-sharp fa-regular fa-arrow-left"></i>','portx'),
+        'next_text'    => __('<i class="fa-sharp fa-regular fa-arrow-right"></i>','portx'),
+    ) );
+        if( $pages ) {
+        echo '<nav><ul>';
+        foreach ( $pages as $page ) {
+            echo "<li>$page</li>";
+        }
+        echo '</ul></nav>';
+    }
+}
+
 

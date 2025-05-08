@@ -1,52 +1,33 @@
 <?php
     get_header();
 ?>
-   <!-- blog area start -->
-   <div class="blog-area-2 blog-padding pt-115 pb-120">
-      <div class="container">
-         <div class="row">
-
+<!-- blog area start -->
+<div class="blog-area-2 blog-padding pt-115 pb-120">
+   <div class="container">
+      <div class="row">
+         <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+            
             <div class="col-xl-4 col-md-6 col-sm-6">
-               
-               <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-
-                  <?php get_template_part('template-parts/content', get_post_format()); ?>
-
-               <?php endwhile; else : ?> 
-
-                  <p>Content Not Found</p>
-
-               <?php endif; ?>
-               <!-- End the while loop -->
+               <?php get_template_part('template-parts/content', get_post_format()); ?>
             </div>
 
-            <div class="col-xl-12">
-               <div class="tp-pagination text-center">
-                  <nav>
-                     <ul>
-                        <li>
-                           <a href="#">1</a>
-                        </li>
-                        <li>
-                           <span class="current">2</span>
-                        </li>
-                        <li>
-                           <a href="#">3</a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <i class="fa-sharp fa-regular fa-arrow-right"></i>
-                           </a>
-                        </li>
-                     </ul>
-                  </nav>
-               </div>
+         <?php endwhile; ?>
+         
+         <div class="col-xl-12">
+            <div class="tp-pagination text-center">
+               <?php portx_pagination(); ?>
             </div>
          </div>
+         
+         <?php else : ?> 
+            <div class="col-xl-12">
+               <p>Content Not Found</p>
+            </div>
+         <?php endif; ?>
       </div>
    </div>
-   <!-- blog area end -->
-
+</div>
+<!-- blog area end -->
 <?php
     get_footer();
 ?>
