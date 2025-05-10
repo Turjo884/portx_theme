@@ -1,3 +1,7 @@
+<?php if(is_single()) : ?>
+
+<?php else: ?>
+
 <div id="post-<?php the_ID(); ?>" <?php post_class("tpblog-2 wow fadeInUp mb-30"); ?> data-wow-duration=".9s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1.5s; animation-delay: 100ms; animation-name: fadeInUp;">
    <div class="tpblog-2__content">
       <?php get_template_part('template-parts/blog/blog-meta'); ?>
@@ -20,3 +24,5 @@
       </div>
    </div>
 </div>
+
+<?php endif; ?>

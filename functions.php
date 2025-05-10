@@ -70,6 +70,16 @@ add_action( 'after_setup_theme', 'portx_setup' );
 /** register widget **/
 function portx_register_widget_sidebar() {
 	register_sidebar( array(
+		'name'          => __( 'Blog Sidebar', 'textdomain' ),
+		'id'            => 'blog-sidebar',
+		'description'   => __( 'Widgets in this area will be shown on blog sidebar widget.', 'textdomain' ),
+		'before_widget' => '<div id="%1$s" class="sidebar__wrapper %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h3 class="sidebar__widget-title rc__post-title">',
+		'after_title'   => '</h3>',
+	) );
+
+		register_sidebar( array(
 		'name'          => __( 'Footer 1', 'textdomain' ),
 		'id'            => 'footer-1',
 		'description'   => __( 'Widgets in this area will be shown on footer-1 widget.', 'textdomain' ),
