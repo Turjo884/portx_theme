@@ -40,6 +40,7 @@
             display: inline-block;
             font-size: 22px;
             margin-bottom: 24px;
+            margin-top: 35px !important;
             font-weight: 700;
 
             &::after {
@@ -55,6 +56,41 @@
         }
 
         & ul {
+            & li {
+                list-style: none;
+                margin-bottom: 20px;
+                line-height: 1;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                a {
+                    font-size: 16px;
+                    color: var(--tp-text-1);
+                    position: relative;
+
+
+                    &:hover {
+                        color: var(--tp-theme-2);
+
+                        &::after {
+                            color: var(--tp-common-black);
+                            left: -14px;
+                        }
+                    }
+                }
+
+                & ul {
+                    padding-left: 25px;
+                    padding-top: 20px;
+                }
+            }
+        }
+    }
+
+    .widget_categories{
+                & ul {
             & li {
                 list-style: none;
                 margin-bottom: 20px;
