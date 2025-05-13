@@ -10,21 +10,19 @@
          <div class="row <?php echo esc_attr($no_sidebar); ?>">
             <div class="col-xxl-8 col-xl-8 col-lg-8 col-md-12">
                <div class="postbox__wrapper pr-20">
-                  <article class="postbox__item format-image mb-50 transition-3">
+                  <article id="post-<?php the_ID(); ?> <?php post_class("tpblog-2 wow fadeInUp mb-30"); ?> class="postbox__item format-image mb-50 transition-3">
                      <div class="postbox__thumb m-img p-relative">
                         <a href="blog-details.html">
-                           <img class="w-100" src="assets/img/blog-detials/blog-img-4.jpg" alt="">
+                           <?php the_post_thumbnail(); ?>
                            <div class="postbox__meta-date ">
-                              <span><a href="#">08 April</a></span>
+                              <span><a href="#"><?php echo get_the_date(); ?></a></span>
                            </div>
                         </a>
                      </div>
                      <div class="postbox__content">
                         <div class="postbox__meta d-flex justify-content-between">
                            <div class="postbox__info">
-                              <span><a href="#"><i class="fa-light fa-user"></i> Yeamin</a></span>
-                              <span><i class="fa-regular fa-location-dot"></i> Logistic</span>
-                              <span><a href="#"><i class="fal fa-comments"></i> 02 Comments</a></span>
+                             <?php get_template_part('template-parts/blog/blog-meta'); ?>
                            </div>
                         </div>
                         <h3 class="postbox__title">
@@ -32,45 +30,7 @@
                           <!-- Your business absolutely needs daily -->
                         </h3>
                         <div class="postbox__text">
-                           <p>There are many variations of passages of Lorem Ipsum available, but majority have suffered
-                              alteration in some form, by injected humour, or randomised words which don’t look even
-                              slightly believable. If you are going to use a passage of Lorem Ipsum. There are many
-                              variations of passages of Lorem Ipsum available, but majority have suffered alteration in
-                              some form, by injected humour, or randomised words which don’t look even slightly
-                              believable. If you are going to use a passage of Lorem Ipsum.</p>
-                           <p>Suspendisse ultricies vestibulum vehicula. Proin laoreet porttitor lacus. Duis auctor vel
-                              ex eu elementum. Fusce eu volutpat felis. Proin sed eros tincidunt, sagittis sapien eu,
-                              porta diam. Aenean finibus scelerisque nulla non facilisis. Fusce vel orci sed quam gravid
-                           </p>
-                           <div class="postbox__gallaray mb-50">
-                              <div class="row">
-                                 <div class="col-xl-6 col-lg-6">
-                                    <div class="postbox__right-img">
-                                       <img class="w-100" src="assets/img/blog-detials/blog-video-img.jpg" alt="">
-                                    </div>
-                                 </div>
-                                 <div class="col-xl-6 col-lg-6">
-                                    <div class="postbox__left-img">
-                                       <img class="w-100" src="assets/img/blog-detials/blog-video-img-2.jpg" alt="">
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <h3 class="postbox__title">
-                              Our Personal Approach
-                           </h3>
-                           <p>Aliquam condimentum, massa vel mollis volutpat, erat sem pharetra quam, ac mattis arcu
-                              elit non massa. Nam mollis nunc velit, vel varius arcu fringilla tristique. Cras elit
-                              nunc, sagittis eu bibendum eu, ultrices placerat sem. Praesent vitae metus auctor.</p>
-                           <blockquote class="d-flex justify-content-between">
-                              <span>
-                                 <p>And the day came when the risk to remain tight in
-                                    a bud was more painful than the risk.</p> <cite>- Harry Newman</cite>
-                              </span>
-                              <span><i class="flaticon-quote"></i></span>
-                           </blockquote>
-
-                           <p>Supported substance consolidates parts of web based promoting and substance showcasing. It
+                           <?php the_content(); ?>
                               includes making substance, for example, a blog entry or video and paying for its
                               consideration on a site that routinely distributes comparative substance. A piece of
                               supported substance will seem to be like the remainder of the substance on the site yet
@@ -82,19 +42,23 @@
                            <div class="row">
                               <div class="col-xl-6 col-lg-12  col-md-12 col-12">
                                  <div class="postbox__details-tag tagcloud">
-                                    <span>Tag:</span>
-                                    <a href="#">Transport</a>
-                                    <a href="#">Logistic</a>
-                                    <a href="#">Air</a>
+                                    <span><?php echo esc_html__('Tag:','portx'); ?></span>
+                                    <?php portx_tags(); ?>
                                  </div>
                               </div>
                               <div class="col-xl-6 col-lg-12 col-md-12 col-12">
                                  <div class="postbox__details-share text-end">
-                                    <span>Share:</span>
-                                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <span><?php echo esc_html__('Share','portx'); ?></span>
+                                       <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+
+                                       <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>" target="_blank">
+                                       <i class="fab fa-facebook-f"></i></a>
+
+                                       <a href="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+
+                                       <a href="https://twitter.com/intent/tweet?url=<?php echo urlencode(get_permalink()); ?>&text=<?php echo urlencode(get_the_title()); ?>" target="_blank">
+                                       <i class="fab fa-twitter"></i></a>
+
                                  </div>
                               </div>
                            </div>
@@ -175,30 +139,7 @@
                   </div>
                   <div class="postbox__comment-form">
                      <h3 class="postbox__comment-form-title">Leave Your Comment</h3>
-                     <form action="#">
-                        <div class="row">
-                           <div class="col-xxl-6 col-xl-6 col-lg-6">
-                              <div class="postbox__comment-input">
-                                 <input type="text" placeholder="Your Name">
-                              </div>
-                           </div>
-                           <div class="col-xxl-6 col-xl-6 col-lg-6">
-                              <div class="postbox__comment-input">
-                                 <input type="email" placeholder="Email Address">
-                              </div>
-                           </div>
-                           <div class="col-xxl-12">
-                              <div class="postbox__comment-input">
-                                 <textarea placeholder="Write Your Comment"></textarea>
-                              </div>
-                           </div>
-                           <div class="col-xxl-12">
-                              <div class="postbox__comment-btn">
-                                 <button type="submit" class="thm-btn">SUBMIT COMMENTS</button>
-                              </div>
-                           </div>
-                        </div>
-                     </form>
+                        <?php if(comments_open() || get_comments_number() ) : comments_template(); endif?>
                   </div>
                </div>
             </div>
