@@ -7,9 +7,9 @@ if (comments_open()) :
         // Display the comments list
         if (have_comments()) :
             ?>
-            <div class="tp-postbox-comments-wrapper">
-                <div class="tp-postbox-comments">
-                    <h3 class="tp-section-title mb-20 tp-fs-40 mb-30 mt-30">
+            <div class="postbox-details-comment-wrapper">
+                <div class="postbox-details-comment-inner">
+                    <h3 class="postbox-details-comment-title">
                         <?php
                         $comment_count = get_comments_number();
                         echo esc_html($comment_count) . ' ' . _n('Comment', 'Comments', $comment_count, 'portx');
@@ -110,20 +110,24 @@ function custom_comment_list($comment, $args, $depth) {
         // Display regular comments
         ?>
         <li <?php comment_class('comment'); ?> id="comment-<?php comment_ID(); ?>">
-                <div class="tp-postbox-comments-thumb br-5">
-                    <?php echo get_avatar($comment, 120); ?>
-                </div>
-                <div class="tp-postbox-comments-text">
-                    <h5 class="tp-postbox-comments-author"><?php comment_author(); ?></h5>
-                    <span><?php comment_date(); ?></span>
-                    <?php comment_text(); ?>
 
-                    <div class="comments-reply-link">
-                        <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+    <div class="postbox-details-comment-box d-sm-flex align-items-start">
+        <div class="postbox-details-comment-thumb">
+            <?php echo get_avatar($comment, 155); ?>
+        </div>
+            <div class="postbox-details-comment-content">
+                <div class="postbox-details-comment-top d-flex justify-content-between align-items-start">
+                    <div class="postbox-details-comment-avater">
+                        <h4 class="postbox-details-comment-avater-title"><?php comment_author(); ?></h4>
                     </div>
+                </div>
+                        <?php comment_text(); ?>
+                <div class="postbox-details-comment-reply">
+                        <?php comment_reply_link(array_merge($args, array('depth' => $depth, 'max_depth' => $args['max_depth']))); ?>
+                </div>
+            </div>
+    </div>
 
-                </div> 
-                
                 
         <?php
     }

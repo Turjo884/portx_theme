@@ -2,6 +2,20 @@
     get_header();
 
     $no_sidebar = is_active_sidebar('blog-sidebar') ? '' : 'justify-content-center';
+
+   $blog_post_autor_name = get_theme_mod('blog_post_autor_name' , esc_html__('About Harry Newman' , 'portx'));
+
+   $autor_description = get_theme_mod('autor_description' , esc_html__('Supported substance consolidates parts of web promoting and substance showcasing. It includes making' , 'portx'));
+
+   $author_image = get_theme_mod('author_image', get_template_directory_uri() . '/assets/img/blog-detials/img.png');
+
+
+   // social section
+      $social_fb = get_theme_mod('social_fb' , esc_html__('#' , 'portx'));
+      $social_ig = get_theme_mod('social_ig' , esc_html__('#' , 'portx'));
+      $social_in = get_theme_mod('social_in' , esc_html__('#' , 'portx'));
+      $social_tw = get_theme_mod('social_tw' , esc_html__('#' , 'portx'));
+
 ?>
 
    <!-- postbox area start -->
@@ -64,81 +78,53 @@
                            </div>
                         </div>
                         <div class="postbox-details-author d-sm-flex align-items-start">
+
+                        <?php if(!empty($author_image)) : ?>
                            <div class="postbox-details-author-thumb">
                               <a href="#">
-                                 <img src="assets/img/blog-detials/img.png" alt="">
+                                 <img src="<?php echo esc_url($author_image); ?>" alt="Author Imag">
                               </a>
                            </div>
+                        <?php endif; ?>
                            <div class="postbox-details-author-content">
+
+                           <?php if(!empty($blog_post_autor_name)) : ?>
                               <h5 class="postbox-details-author-title">
-                                 <a href="#">About Harry Newman</a>
+                                 <a href="#"><?php echo esc_html($blog_post_autor_name, '');?></a>
                               </h5>
-                              <p>Supported substance consolidates parts of web promoting and substance showcasing. It
-                                 includes making</p>
+                           <?php endif; ?>
+               
+                           <?php if(!empty($autor_description)) : ?>
+                              <p><?php echo esc_html($autor_description, '');?></p>
+                           <?php endif; ?>
 
                               <div class="postbox-details-author-social">
-                                 <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                                 <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                                 <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                                 <a href="#"><i class="fa-brands fa-vimeo-v"></i></a>
+
+                               <?php if(!empty($social_fb)) : ?>
+                                 <a href="<?php echo esc_url($social_fb); ?>"><i class="fa-brands fa-facebook-f"></i></a>
+                                 <?php endif; ?>
+
+                                  <?php if(!empty($social_tw)) : ?>
+                                 <a href="<?php echo esc_url($social_tw); ?>"><i class="fa-brands fa-twitter"></i></a>
+                                 <?php endif; ?>
+
+                                  <?php if(!empty($social_in)) : ?>
+                                 <a href="<?php echo esc_url($social_in); ?>"><i class="fa-brands fa-linkedin-in"></i></a>
+                                 <?php endif; ?>
+
+                                  <?php if(!empty($social_ig)) : ?>
+                                 <a href="<?php echo esc_url($social_ig); ?>"><i class="fa-brands fa-vimeo-v"></i></a>
+                                 <?php endif; ?>
                               </div>
                            </div>
                         </div>
                      </div>
                   </article>
                   <div class="postbox-details-comment-wrapper">
-                     <h3 class="postbox-details-comment-title">02 Comments</h3>
-                     <div class="postbox-details-comment-inner">
-                        <ul>
-                           <li>
-                              <div class="postbox-details-comment-box d-sm-flex align-items-start">
-                                 <div class="postbox-details-comment-thumb">
-                                    <img src="assets/img/blog-detials/user.png" alt="">
-                                 </div>
-                                 <div class="postbox-details-comment-content">
-                                    <div
-                                       class="postbox-details-comment-top d-flex justify-content-between align-items-start">
-                                       <div class="postbox-details-comment-avater">
-                                          <h4 class="postbox-details-comment-avater-title">Mithcel Adnan</h4>
-                                       </div>
-                                    </div>
-                                    <p>Curabitur luctus nisl in justo maximus egestas. Curabitur sit amet sapien vel
-                                       nunc molestie pulvinar at vitae quam. Aliquam lobortis nisi vitae congue
-                                       consectetur. Aliquam et quam non metus </p>
-                                    <div class="postbox-details-comment-reply">
-                                       <a href="#">Reply</a>
-                                    </div>
-                                 </div>
-                              </div>
-                              <ul class="children">
-                                 <li>
-                                    <div class="postbox-details-comment-box d-sm-flex align-items-start">
-                                       <div class="postbox-details-comment-thumb">
-                                          <img src="assets/img/blog-detials/user-2.png" alt="">
-                                       </div>
-                                       <div class="postbox-details-comment-content">
-                                          <div
-                                             class="postbox-details-comment-top d-flex justify-content-between align-items-start">
-                                             <div class="postbox-details-comment-avater">
-                                                <h4 class="postbox-details-comment-avater-title">Liza Olivarez</h4>
-                                             </div>
-                                          </div>
-                                          <p>Curabitur luctus nisl in justo maximus egestas. Curabitur sit amet sapien
-                                             vel nunc molestie pulvinar at vitae quam. Aliquam lobortis nisi vitae
-                                             congue consectetur. Aliquam et quam non metus </p>
-                                          <div class="postbox-details-comment-reply">
-                                             <a href="#">Reply</a>
-                                          </div>
-                                       </div>
-                                    </div>
-                                 </li>
-                              </ul>
-                           </li>
-                        </ul>
-                     </div>
+
                   </div>
                   <div class="postbox__comment-form">
-                     <h3 class="postbox__comment-form-title">Leave Your Comment</h3>
+                     <h3 class="postbox__comment-form-title"><?php echo esc_html__('Leave Your Comment', 'portx'); ?></h3>
                         <?php if(comments_open() || get_comments_number() ) : comments_template(); endif?>
                   </div>
                </div>

@@ -273,3 +273,87 @@ function footer_copywright_kirki(){
     );
 }
 footer_copywright_kirki();
+
+// single post content sectoin
+function single_post_content_kirki(){
+    new \Kirki\Section(
+        'single_post_content',
+        [
+            'title'       => esc_html__( 'Single Post Content', 'kirki' ),
+            'description' => esc_html__( 'Single Post Content Details.', 'kirki' ),
+            'panel'       => 'portx_panel_id',
+            'priority'    => 160,
+        ]
+    );
+
+        new \Kirki\Field\Text(
+        [
+            'settings' => 'blog_post_autor_name',
+            'label'    => esc_html__( 'Blog Post Autor Name', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( 'About Harry Newman', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+        new \Kirki\Field\Text(
+        [
+            'settings' => 'autor_description',
+            'label'    => esc_html__( 'Write Author Description', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( 'Supported substance consolidates parts of web promoting and substance showcasing. It includes making', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'social_fb',
+            'label'    => esc_html__( 'Facebook', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+        new \Kirki\Field\Text(
+        [
+            'settings' => 'social_tw',
+            'label'    => esc_html__( 'Twitter', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+    
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'social_in',
+            'label'    => esc_html__( 'LinkedIn', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+    new \Kirki\Field\Text(
+        [
+            'settings' => 'social_ig',
+            'label'    => esc_html__( 'Instagram', 'kirki' ),
+            'section'  => 'single_post_content',
+            'default'  => esc_html__( '#', 'kirki' ),
+            'priority' => 10,
+        ]
+    );
+
+        new \Kirki\Field\Image(
+        [
+            'settings'    => 'author_image',
+            'label'       => esc_html__( 'Author Image', 'kirki' ),
+            'description' => esc_html__( 'Upload Your Image', 'kirki' ),
+            'section'     => 'single_post_content',
+            'default'     => get_template_directory_uri().'/assets/img/blog-detials/img.png',
+        ]
+    );
+}
+single_post_content_kirki();
