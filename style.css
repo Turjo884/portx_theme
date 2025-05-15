@@ -24,3 +24,13 @@ div#gallery-1 {
 .tp-footer__input button {
     top: 29%!important;
 }
+
+.breadcrumb__list .page-title span {
+    color: #fff !important;
+    font-size: 50px !important;
+    font-weight: bold !important;
+}
+
+.breadcrumb__list span {
+    color: #fff !important;
+}

@@ -357,3 +357,27 @@ function single_post_content_kirki(){
     );
 }
 single_post_content_kirki();
+
+// breadcrumb background image sectoin
+function breadcrumb_image_kirki(){
+    new \Kirki\Section(
+        'breadcrumb_image',
+        [
+            'title'       => esc_html__( 'Breadcrumbd Image', 'kirki' ),
+            'description' => esc_html__( 'Upload Your Breadcrumb Image', 'kirki' ),
+            'panel'       => 'portx_panel_id',
+            'priority'    => 160,
+        ]
+    );
+
+        new \Kirki\Field\Image(
+        [
+            'settings'    => 'breadcrumb_bg_image',
+            'label'       => esc_html__( 'Breadcrumb Image', 'kirki' ),
+            'description' => esc_html__( 'Upload Your Breadcrumb Image', 'kirki' ),
+            'section'     => 'breadcrumb_image',
+            'default'     => get_template_directory_uri().'/assets/img/breadcrumb/breadcrumb-bg-1.jpg',
+        ]
+    );
+}
+breadcrumb_image_kirki();

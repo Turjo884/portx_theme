@@ -180,6 +180,7 @@ function portx_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'portx_scripts' );
 
+include_once('inc/breadcrumb.php');
 include_once('inc/sidebar-recent-post.php');
 include_once('inc/nav-walker.php');
 include_once('inc/template-function.php');
